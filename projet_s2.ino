@@ -14,18 +14,16 @@ void setup() {
     pinMode(5,OUTPUT);
     pinMode(7,OUTPUT);
     pinMode(1,OUTPUT);
-}
 
-void loop() {
-
-    int l_mescan = 0;
+    //int l_mescan = 0;
     float l_vmes = 0;
     float l_mes0;
     float l_var;
+}
 
-    l_mescan=analogRead(A5);
+void loop() {
     l_mes0 = l_vmes;
-    l_vmes = (l_mescan/204.6);
+    l_vmes = (analogRead(A5)/204.6);
     Serial.println(l_vmes);
     l_var = abs(l_mes0) - abs(l_vmes);
 
@@ -44,7 +42,7 @@ void loop() {
     }
 }
 
-void setLight(string valuePrint) {
+void setLight(String valuePrint) {
     Serial.println(valuePrint);
     digitalWrite(7, HIGH);
     delay(2000);

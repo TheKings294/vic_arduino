@@ -11,6 +11,7 @@ float getKbNbr(void){
       l_float_valRecu = atof(l_tabChar_octetsRecus);
     }
   }while(Serial.available()> 0);
+  
   return l_float_valRecu;
 }
 
